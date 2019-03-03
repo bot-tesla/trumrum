@@ -169,11 +169,12 @@ function checknick (member, role, startnum, endnum, bot, message){
     }
 }
 
-bot.login('NTUwNzE0NDUyMDg1ODMzNzI4.D1mcXg.XIMHh-xzcPXcY9-F87M1SIocQHw');
+bot.login(process.env.token);
 bot.on('ready', () => {
     console.log("Бот был успешно запущен!");
-    bot.user.setPresence({ game: { name: '' }, status: 'online' })
+    bot.user.setPresence({ game: { name: 'выдачу ролей' }, status: 'online' })
 });
+
 bot.on('message', async message => {
     if (message.channel.type == "dm") return // Если в ЛС, то выход.
     if (message.guild.id != serverid && message.guild.id != "550720059874607118") return
