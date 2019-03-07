@@ -13,8 +13,7 @@ const dspanel = new Set();
 const nrpnames = new Set(); // Невалидные ники будут записаны в nrpnames
 const sened = new Set(); // Уже отправленные запросы будут записаны в sened
 const support_cooldown = new Set(); // Запросы от игроков.
-const snyatie = new Set(); // Уже отправленные запросы на снятие роли быдут записаны в snyatie
-
+const snyatie = new Set(); // Уже отправленные запросы на снятие роли быдут записаны в snyatie 
 let antislivsp1 = new Set();
 let antislivsp2 = new Set();
 
@@ -291,7 +290,8 @@ bot.on('message', async message => {
                 .addField("**Выбранная функция:**", `\`Роль для выдачи:\` <@&${role.id}>`)
                 .addField("**Запрос с канала:**", `<#${message.channel.id}>`)
                 .addField("**Работа с окном:**", `\`[✔] - выдать роль\`\n` + `\`[❌] - отказать в выдачи роли\`\n` + `\`[D] - удалить сообщение\``)
-                .setTimestamp()
+                .addURL('https://yandex.ru/images/search?family=yes&pos=3&img_url=http%3A%2F%2Frisovach.ru%2Fupload%2F2016%2F02%2Fmem%2Flagutin-agutin_104959821_orig_.jpg&text=запроси+роль%21&rpt=simage')
+		.setTimestamp()
                 reqchat.send(embed).then(async msgsen => {
                     await msgsen.react('✔')
                     await msgsen.react('❌')
