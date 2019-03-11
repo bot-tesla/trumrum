@@ -251,10 +251,12 @@ bot.on('message', async message => {
                     await msgsen.react('❌')
                     await msgsen.react('🇩')
                     await msgsen.pin();
-                })
+                 })
                 snyatie.add(message.author.id + `=>` + user.id)
                 return message.react(`📨`);
-            })
+            }).catch(() => {
+                return answer.delete()
+            });
         });
     }
 
