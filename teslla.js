@@ -174,6 +174,16 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'выдачу ролей' }, status: 'online' })
 });
 
+bot.on('guildMemberAdd', async member => {
+let channel = member.guild.channels.find(c => c.name == 'general');
+channel.send('***До свидания,***' + `<@${member.id}>` + '***прибыл. :gun: Добро пожаловать!***')
+})
+
+bot.on('guildMemberRemove', async member => {
+let channel = member.guild.channels.find(c => c.name == 'general');
+channel.send('***Медвежонок***' + `<@${member.id}>` + '*** Мы будем скучать! :cry: ***')
+})
+
 bot.on('message', async message => {
     if (message.channel.type == "dm") return // Если в ЛС, то выход.
     if (message.guild.id != serverid && message.guild.id != "550720059874607118") return
