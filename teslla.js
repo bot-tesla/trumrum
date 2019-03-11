@@ -254,9 +254,7 @@ bot.on('message', async message => {
                 })
                 snyatie.add(message.author.id + `=>` + user.id)
                 return message.react(`📨`);
-            }).catch(() => {
-                return answer.delete()
-            });
+            })
         });
     }
 
